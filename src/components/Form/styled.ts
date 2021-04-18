@@ -40,6 +40,14 @@ const Input = styled.input`
   width: 100%;
   max-width: 275px;
   color: #121212;
+  ::-webkit-inner-spin-button{
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+  ::-webkit-outer-spin-button{
+    -webkit-appearance: none; 
+    margin: 0; 
+  }  
 `;
 
 export {
