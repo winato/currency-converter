@@ -1,11 +1,11 @@
-import React from 'react';
+import { ChangeEvent } from 'react';
 import { Input, Select } from './styled';
 
 interface Props {
   currencies: string[];
   selectedCurrency: string;
-  handleChange: ((event: any) => void);
-  hangleChangeAmount: ((event: any) => void);
+  handleChangeCurrency: ((e: ChangeEvent<HTMLSelectElement>) => void);
+  hangleChangeAmount: ((e: ChangeEvent<HTMLInputElement>) => void);
   amount: number,
   isLoading: boolean,
 }
@@ -13,7 +13,7 @@ interface Props {
 const Row = ({
   currencies,
   selectedCurrency,
-  handleChange,
+  handleChangeCurrency,
   hangleChangeAmount,
   amount,
   isLoading,
@@ -29,7 +29,7 @@ const Row = ({
         />
         <Select
           value={selectedCurrency}
-          onChange={handleChange}
+          onChange={handleChangeCurrency}
           disabled={isLoading}
         >
           {

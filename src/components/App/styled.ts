@@ -9,6 +9,11 @@ const AppStyles = createGlobalStyle`
     align-items: center;
     min-height: 100vh;
     font-family: 'Roboto';
+    color: #121212;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 `
 

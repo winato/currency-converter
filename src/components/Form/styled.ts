@@ -22,6 +22,12 @@ const Select = styled.select`
   outline: none;
   margin: .5rem;
   padding: .5rem;
+  width: 100%;
+  max-width: 275px;
+  color: #121212;
+  @media (min-width: 768px) {
+    max-width: 100px;
+  }
 `;
 
 const Input = styled.input`
@@ -31,6 +37,9 @@ const Input = styled.input`
   outline: none;
   margin: .5rem;
   padding: .5rem;
+  width: 100%;
+  max-width: 275px;
+  color: #121212;
 `;
 
 export {

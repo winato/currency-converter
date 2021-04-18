@@ -1,14 +1,14 @@
-import { getDailyHistory } from '../../api'
 import { useEffect, useState } from 'react';
-import ChartCanvas from './ChartCanvas';
 import { ToastContainer, toast } from 'react-toastify';
+import ChartCanvas from './ChartCanvas';
+import { getDailyHistory } from '../../api'
 
 interface Props {
   fromCurrency: string,
   toCurrency: string,
 }
 
-interface State {
+interface FormatedHistoryData {
   key: string,
   open: string,
   high: string,
@@ -16,15 +16,24 @@ interface State {
   close: string,
 }
 
+interface HistoryData {
+  "1. Information": string,
+  "2. From Symbol": string,
+  "3. To Symbol": string,
+  "4. Output Size": string,
+  "5. Last Refreshed": string,
+  "6. Time Zone": string
+}
+
 const Chart = ({
   fromCurrency,
   toCurrency
 }: Props) => {
-  const [history, setHistory] = useState<State[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [history, setHistory] = useState<FormatedHistoryData[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const formatHistory = (historyObj: object) => {
-    return Object.entries(historyObj).map(([key, value]) => ({
+  const formatHistory = (historyObj: HistoryData) => {
+    return Object.entries(historyObj).map(([key, value]): FormatedHistoryData => ({
       key,
       open: value['1. open'],
       high: value['2. high'],

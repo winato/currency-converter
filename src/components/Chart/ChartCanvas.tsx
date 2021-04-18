@@ -1,6 +1,5 @@
 import { LineChart, Tooltip, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 import { ChartHolder } from './styled';
-
 interface ChartData {
   key: string,
   open: string,

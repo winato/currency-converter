@@ -15,8 +15,10 @@ interface HistoryParams {
   to_symbol: string,
 }
 
+const ApiBaseUrl = 'https://www.alphavantage.co/query';
+
 const getExchangeRate = (payload: ConverterParams) => {
-  return axios.get('https://www.alphavantage.co/query', {
+  return axios.get(ApiBaseUrl, {
     params: { 
       ...payload,
       apikey: apiKey,
@@ -26,7 +28,7 @@ const getExchangeRate = (payload: ConverterParams) => {
 }
 
 const getDailyHistory = (payload: HistoryParams) => {
-  return axios.get('https://www.alphavantage.co/query', {
+  return axios.get(ApiBaseUrl, {
     params: { 
       ...payload,
       apikey: apiKey,
