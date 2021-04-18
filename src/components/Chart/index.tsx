@@ -8,7 +8,7 @@ interface Props {
   toCurrency: string,
 }
 
-interface FormatedHistoryData {
+interface FormattedHistoryData {
   key: string,
   open: string,
   high: string,
@@ -29,11 +29,11 @@ const Chart = ({
   fromCurrency,
   toCurrency
 }: Props) => {
-  const [history, setHistory] = useState<FormatedHistoryData[]>([]);
+  const [history, setHistory] = useState<FormattedHistoryData[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const formatHistory = (historyObj: HistoryData) => {
-    return Object.entries(historyObj).map(([key, value]): FormatedHistoryData => ({
+    return Object.entries(historyObj).map(([key, value]): FormattedHistoryData => ({
       key,
       open: value['1. open'],
       high: value['2. high'],
