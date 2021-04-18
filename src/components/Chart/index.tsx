@@ -16,15 +16,6 @@ interface FormattedHistoryData {
   close: string,
 }
 
-interface HistoryData {
-  "1. Information": string,
-  "2. From Symbol": string,
-  "3. To Symbol": string,
-  "4. Output Size": string,
-  "5. Last Refreshed": string,
-  "6. Time Zone": string
-}
-
 const Chart = ({
   fromCurrency,
   toCurrency
@@ -32,7 +23,7 @@ const Chart = ({
   const [history, setHistory] = useState<FormattedHistoryData[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const formatHistory = (historyObj: HistoryData) => {
+  const formatHistory = (historyObj: object) => {
     return Object.entries(historyObj).map(([key, value]): FormattedHistoryData => ({
       key,
       open: value['1. open'],
