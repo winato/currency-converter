@@ -44,10 +44,15 @@ const Chart = ({
       to_symbol: toCurrency,
     })
     .then(({ data }) => {
-      const historyArray = formatHistory(data['Time Series FX (Daily)']);
-      setHistory(historyArray);
+      const history = data['Time Series FX (Daily)'];
+      if (history) {
+        const historyArray = formatHistory(history);
+        setHistory(historyArray);
+      } else {
+        toast.error(data['Note']);
+      }
     })
-    .catch(() => {
+    .catch((e) => {
       toast.error('Something went wrong');
     })
     .finally(() => {

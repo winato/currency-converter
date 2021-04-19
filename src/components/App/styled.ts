@@ -10,6 +10,7 @@ const AppStyles = createGlobalStyle`
     min-height: 100vh;
     font-family: 'Roboto';
     color: #121212;
+    background-color: #fafafa;
   }
 
   * {

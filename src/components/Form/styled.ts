@@ -25,12 +25,14 @@ const Select = styled.select`
   width: 100%;
   max-width: 275px;
   color: #121212;
+  background-color: #fafafa;
   @media (min-width: 768px) {
     max-width: 100px;
   }
 `;
 
 const Input = styled.input`
+  background-color: #fafafa;
   font-size: 1.5em;
   border-radius: 3rem;
   border: 1px solid #59c2ff;
